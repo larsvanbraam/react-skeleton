@@ -13,7 +13,7 @@ $gutterSize: $gridSize * 2;
 $colorPrimary: #61dafb;
 
 // $mediaQueries
-//@import '../../../data/mediaQueries.json';
+@import '../../../config/mediaQueries.json';
 
 // Paths
 $pathComponentImage: 'asset/image';

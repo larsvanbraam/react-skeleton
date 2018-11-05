@@ -8,7 +8,7 @@ import routes from '../config/routes';
 import Header from '../component/layout/Header';
 import RouteWithSubRoutes from '../util/RouteWithSubRoutes';
 
-class App extends React.Component {
+class App extends React.Component<{ deviceState: number }> {
   public render() {
     return (
       <Router>

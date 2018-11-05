@@ -28,6 +28,7 @@ const config = {
     [VariableNames.STATIC_ROOT]:
       (window.webpackPublicPath || process.env.PUBLIC_PATH) + process.env.STATIC_ROOT,
     [VariableNames.PUBLIC_PATH]: window.webpackPublicPath || process.env.PUBLIC_PATH,
+    [VariableNames.SHOW_STATE_INDICATOR]: true,
   },
   urls: {
     [URLNames.API]: `${process.env.PUBLIC_PATH}api/`,

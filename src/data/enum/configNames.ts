@@ -13,5 +13,6 @@ export const URLNames = {
 export const VariableNames = {
   STATIC_ROOT: 'static-root',
   PUBLIC_PATH: 'public-path',
+  SHOW_STATE_INDICATOR: 'show-state-indicator',
   VERSIONED_STATIC_ROOT: 'versioned-static-root',
 };

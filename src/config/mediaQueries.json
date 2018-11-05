@@ -1,0 +1,13 @@
+{
+  "mediaQueries": {
+    "XXX_SMALL": "(max-width: 340px)",
+    "XX_SMALL": "(max-width: 400px)",
+    "X_SMALL": "(max-width: 480px)",
+    "SMALL": "(max-width: 767px)",
+    "MEDIUM": "(max-width: 1023px)",
+    "LARGE": "(max-width: 1280px)",
+    "X_LARGE": "(max-width: 1439px)",
+    "XX_LARGE": "(max-width: 1659px)",
+    "XXX_LARGE": "(min-width: 1660px)"
+  }
+}
