@@ -1,3 +1,4 @@
+const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -5,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const path = require('path');
 const baseWebpackConfig = require('./webpack.base.config');
 const webpackHelpers = require('./webpackHelpers');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
@@ -28,12 +28,24 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
           },
         ],
       },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: 'font/[name].[hash:7].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
   devtool: false,
   output: {
-    filename: '[name].[contenthash].js',
-    chunkFilename: path.posix.join('', '[name].[contenthash].js'),
+    filename: 'script/[name].[contenthash].js',
+    chunkFilename: path.posix.join('script/', '[name].[contenthash].js'),
     path: path.join(projectRoot, 'dist'),
   },
   optimization: {
@@ -65,7 +77,7 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: 'style/[name].[contenthash].css',
     }),
     new ImageminPlugin({
       disable: !config.build.enableImageOptimization,

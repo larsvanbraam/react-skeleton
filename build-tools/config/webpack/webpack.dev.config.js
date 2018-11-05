@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const path = require('path');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const baseWebpackConfig = require('./webpack.base.config.js');
 const detectPort = require('detect-port');
@@ -17,6 +18,18 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         oneOf: [
           {
             use: webpackHelpers.getScssLoaderConfig(true),
+          },
+        ],
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: path.posix.join('', 'font/[name].[hash:7].[ext]'),
+            },
           },
         ],
       },
