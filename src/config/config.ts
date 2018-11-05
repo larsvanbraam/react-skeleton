@@ -1,7 +1,5 @@
 import { EnvironmentNames, URLNames, VariableNames } from '../data/enum/configNames';
 
-console.log(VariableNames);
-
 const config = {
   environments: {
     [EnvironmentNames.PRODUCTION]: {

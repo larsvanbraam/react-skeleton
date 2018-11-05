@@ -8,7 +8,7 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 module.exports = {
   entry: {
     app: [
-      path.join(projectRoot, 'src/polyfill/polyfill.js'),
+      path.join(projectRoot, 'src/polyfill/polyfill.ts'),
       path.join(projectRoot, 'src/index.tsx'),
     ],
   },
