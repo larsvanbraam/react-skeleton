@@ -1,0 +1,7 @@
+.wrapper {
+  width: 100%;
+  max-width: calc(100rem + #{$gutterSize * 2});
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $gutterSize;
+}

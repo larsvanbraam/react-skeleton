@@ -1,0 +1,12 @@
+{
+  "destination": "./src/component",
+  "variables": [
+    {
+      "name": "classComponent",
+      "type": "confirm",
+      "message": "Do you want to render the component as a class?",
+      "isBoolean": true,
+      "default": false
+    }
+  ]
+}

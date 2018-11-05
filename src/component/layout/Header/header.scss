@@ -1,0 +1,45 @@
+.header {
+  @include size(100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background: #20232a;
+  color: white;
+
+  .icon {
+    @include size($gridSize * 4);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: $gridSize;
+  }
+
+  > div {
+    padding-top: $gridSize * 2;
+    padding-bottom: $gridSize * 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: white;
+  }
+
+  nav {
+    a {
+      &:not(:last-child) {
+        margin-right: $gridSize * 2;
+      }
+
+      @include hover() {
+        text-decoration: underline;
+      }
+    }
+
+    :global {
+      .active {
+        color: $colorPrimary;
+      }
+    }
+  }
+}
