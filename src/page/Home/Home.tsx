@@ -3,6 +3,7 @@ import * as styles from './home.scss';
 import * as React from 'react';
 
 import Wrapper from '../../component/general/Wrapper';
+import LocaleContext from '../../util/locale/LocaleContext';
 
 class Home extends React.Component {
   public render() {
@@ -10,6 +11,7 @@ class Home extends React.Component {
       <section className={styles.home}>
         <Wrapper>
           <h2>Home page!</h2>
+          <LocaleContext.Consumer>{context => context.getText('foo.bar')}</LocaleContext.Consumer>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus felis, volutpat at
             facilisis vel, tempor et arcu. Proin vitae fringilla massa. In pulvinar venenatis nulla

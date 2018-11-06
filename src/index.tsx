@@ -8,9 +8,10 @@ import { render } from 'react-dom';
 
 import App from './App';
 import reducers from './reducers';
-import { setDeviceState } from './actions';
+import { setDeviceState } from './actions/appActions';
 import deviceStateTracker from './util/deviceStateTracker';
 import { DeviceStateEvent } from 'seng-device-state-tracker';
+import LocaleProvider from './util/locale/LocaleProvider';
 
 // Create the redux store
 const store = createStore(
@@ -29,7 +30,9 @@ store.dispatch(setDeviceState(deviceStateTracker.currentDeviceState.state));
 // Render out the root component
 render(
   <Provider store={store}>
-    <App />
+    <LocaleProvider>
+      <App />
+    </LocaleProvider>
   </Provider>,
   document.getElementById('app'),
 );

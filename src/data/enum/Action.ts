@@ -1,3 +1,4 @@
 export default {
   SET_DEVICE_STATE: 'SET_DEVICE_STATE',
+  SET_LOCALE: 'SET_LOCALE',
 };
