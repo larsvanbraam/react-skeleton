@@ -3,8 +3,7 @@ import * as React from 'react';
 const LocaleContext = React.createContext({
   locale: null,
   translations: {},
-  getText: null,
-  hasText: null,
+  getTranslation: null,
 });
 
 export default LocaleContext;

@@ -1,24 +1,18 @@
 import * as React from 'react';
 import LocaleContext from '../LocaleContext';
+import { get } from 'lodash';
 
 interface ILocaleProviderProps {
   locale: string;
-  translations: { [locale: string]: { [key: string]: string } };
+  translations: { [key: string]: string };
 }
 
 class LocaleProvider extends React.Component<ILocaleProviderProps> {
   /**
    * Retrieve the text from the translations
    */
-  public getText(id: string): string {
-    return this.props.translations[this.props.locale][id] || id;
-  }
-
-  /**
-   * Check if the translations contain the provided id
-   */
-  public hasText(id: string): boolean {
-    return this.props.translations[this.props.locale][id] !== undefined;
+  public getTranslation(id: string): string {
+    return get(this.props.translations, id) || id;
   }
 
   public render() {
@@ -27,8 +21,7 @@ class LocaleProvider extends React.Component<ILocaleProviderProps> {
         value={{
           locale: this.props.locale,
           translations: this.props.translations,
-          getText: this.getText.bind(this),
-          hasText: this.hasText.bind(this),
+          getTranslation: this.getTranslation.bind(this),
         }}
       >
         {this.props.children}
