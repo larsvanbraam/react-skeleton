@@ -4,14 +4,9 @@ import * as React from 'react';
 
 import Wrapper from '../../component/general/Wrapper';
 import LocalizedText from '../../util/locale/LocalizedText';
+import { renderParagraphs } from '../../util/locale/LocaleHelper';
 
 class About extends React.Component {
-  private static renderParagraphs(translation: string | Array<any>): React.ReactNode {
-    return Array.isArray(translation)
-      ? translation.map(item => <p key={item.value}>{item.value}</p>)
-      : translation;
-  }
-
   public render() {
     return (
       <section className={styles.about}>
@@ -19,7 +14,7 @@ class About extends React.Component {
           <h2>
             <LocalizedText id="about.heading" />
           </h2>
-          <LocalizedText id="about.paragraphs" render={About.renderParagraphs} />
+          <LocalizedText id="about.paragraphs" render={renderParagraphs} />
         </Wrapper>
       </section>
     );

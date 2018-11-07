@@ -1,4 +1,4 @@
-import Action from '../data/enum/Action';
+import Action from '../../data/enum/Action';
 
 export function setDeviceState(deviceState) {
   return {

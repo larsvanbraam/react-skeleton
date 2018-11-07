@@ -15,4 +15,6 @@ export const VariableNames = {
   PUBLIC_PATH: 'public-path',
   SHOW_STATE_INDICATOR: 'show-state-indicator',
   VERSIONED_STATIC_ROOT: 'versioned-static-root',
+  LOCALES: 'locales',
+  DEFAULT_LOCALE: 'default-locale',
 };

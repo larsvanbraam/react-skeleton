@@ -1,0 +1,20 @@
+.localeSelector {
+  display: inline-block;
+
+  button {
+    background: transparent;
+    padding: 0 $gridSize;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    display: inline-block;
+
+    &:not(:last-child) {
+      border-right: 1px solid white;
+    }
+  }
+
+  .isActive {
+    color: $colorPrimary;
+  }
+}

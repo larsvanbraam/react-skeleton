@@ -1,4 +1,4 @@
-import Action from '../data/enum/Action';
+import Action from '../../data/enum/Action';
 
 export default function app(state = { deviceState: null }, action) {
   switch (action.type) {

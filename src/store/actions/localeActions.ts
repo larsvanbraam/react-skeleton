@@ -1,16 +1,26 @@
-import Action from '../data/enum/Action';
+import Action from '../../data/enum/Action';
 import axios from 'axios';
-import configManager from '../util/configManagerInstance';
-import { VariableNames } from '../data/enum/configNames';
+import configManager from '../../util/configManagerInstance';
+import { VariableNames } from '../../data/enum/configNames';
+import store from '../store';
 
 /**
  * Action used to update the active locale
  * @param locale
  */
 export function setActiveLocale(locale) {
-  return {
-    locale,
-    type: Action.SET_ACTIVE_LOCALE,
+  return dispatch => {
+    // We need to check the current store to avoid duplicate xhr requests
+    const { translations } = store.getState().locale;
+    // Check if the desired locale has already been loaded, if not try to load it!
+    return Promise.all([
+      !translations[locale] ? dispatch(addLocale(locale)) : Promise.resolve(),
+    ]).then(() =>
+      dispatch({
+        locale,
+        type: Action.SET_ACTIVE_LOCALE,
+      }),
+    );
   };
 }
 
@@ -34,7 +44,7 @@ export function loadingLocale(locale) {
 export function addLocale(locale) {
   return dispatch => {
     // Update the store to know that we are adding a locale
-    dispatch(this.loadingLocale(locale));
+    dispatch(loadingLocale(locale));
     // Run the request to load the translation file
     return axios
       .get(
