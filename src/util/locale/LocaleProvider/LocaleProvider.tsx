@@ -9,7 +9,8 @@ interface ILocaleProviderProps {
 
 class LocaleProvider extends React.Component<ILocaleProviderProps> {
   /**
-   * Retrieve the text from the translations
+   * Retrieve the text from the translations, if it's not found we return the original id
+   * @param id
    */
   public getTranslation(id: string): string {
     return get(this.props.translations, id) || id;

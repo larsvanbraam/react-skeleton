@@ -4,7 +4,7 @@ import * as React from 'react';
 
 {{#if classComponent}}
 class {{name_pc}} extends React.Component {
-  render() {
+  public render() {
     return (
       <div className={ styles.{{name_cc}} }>
         <h2>{{name_pc}}</h2>

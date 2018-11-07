@@ -7,6 +7,20 @@
     ]
   },
   "about": {
-    "heading": "About page!"
+    "heading": "About page!",
+    "paragraphs": [
+      {
+        "value":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec ipsum ipsum. Donec pharetra diam nibh, quis vestibulum tortor mattis tincidunt. Fusce a mollis mi, et hendrerit lorem. Nulla eu bibendum magna. Donec sed orci blandit, efficitur enim in, pellentesque nisl. Nulla facilisi. Aenean rhoncus vel nisl non tincidunt. Maecenas posuere ex justo, non molestie mi porttitor mattis. Integer iaculis convallis nisl. Vivamus sit amet sapien imperdiet lectus pharetra fringilla id nec ex. Quisque at faucibus elit. Quisque sed nisi id leo rutrum rutrum vel a odio. Nam vel tincidunt leo. Mauris volutpat facilisis justo quis congue. Vestibulum dictum convallis consequat."
+      },
+      {
+        "value":
+          "Praesent a iaculis arcu. Fusce lacinia enim in est rutrum accumsan. Quisque velit erat, dignissim nec sodales ut, fermentum nec nisi. Nam molestie sollicitudin est, id maximus dui blandit ac. Nunc ut ornare ex. Nulla eleifend vel mauris eu condimentum. Suspendisse pellentesque odio sollicitudin, dapibus sem vitae, feugiat diam. Praesent elit ex, cursus ac interdum ac, facilisis sed leo."
+      },
+      {
+        "value":
+          "Nulla viverra erat sed viverra iaculis. Nulla aliquam tortor eget bibendum aliquet. Nulla viverra, lorem sed varius semper, magna odio pulvinar nulla, id malesuada augue felis rutrum turpis. Duis mi nunc, elementum eu neque a, suscipit vestibulum massa. Etiam dignissim ut ex euismod consequat. Nunc scelerisque efficitur sem. Duis quis tristique leo, eu iaculis nisl."
+      }
+    ]
   }
 }

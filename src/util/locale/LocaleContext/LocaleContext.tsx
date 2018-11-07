@@ -1,6 +1,12 @@
 import * as React from 'react';
 
-const LocaleContext = React.createContext({
+export interface ILocaleContext {
+  activeLocale: string;
+  translations: { [key: string]: any };
+  getTranslation: (id: string) => any;
+}
+
+const LocaleContext = React.createContext<ILocaleContext>({
   activeLocale: null,
   translations: {},
   getTranslation: null,
