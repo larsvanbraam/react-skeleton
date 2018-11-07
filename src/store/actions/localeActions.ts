@@ -25,26 +25,12 @@ export function setActiveLocale(locale) {
 }
 
 /**
- * Actions used to set the store state to loading while the new locale is being loaded.
- *
- * @param locale
- */
-export function loadingLocale(locale) {
-  return {
-    locale,
-    type: Action.LOADING_LOCALE,
-  };
-}
-
-/**
  * Action used to add a new locale to the store.
  *
  * @param locale
  */
 export function addLocale(locale) {
   return dispatch => {
-    // Update the store to know that we are adding a locale
-    dispatch(loadingLocale(locale));
     // Run the request to load the translation file
     return axios
       .get(
