@@ -3,7 +3,7 @@ import LocaleContext from '../LocaleContext';
 import { get } from 'lodash';
 
 interface ILocaleProviderProps {
-  locale: string;
+  activeLocale: string;
   translations: { [key: string]: string };
 }
 
@@ -19,7 +19,7 @@ class LocaleProvider extends React.Component<ILocaleProviderProps> {
     return (
       <LocaleContext.Provider
         value={{
-          locale: this.props.locale,
+          activeLocale: this.props.activeLocale,
           translations: this.props.translations,
           getTranslation: this.getTranslation.bind(this),
         }}

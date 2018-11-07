@@ -1,9 +1,9 @@
 import Action from '../data/enum/Action';
 
-export default function app(state = { locale: null, translations: {} }, action) {
+export default function app(state = { activeLocale: null, translations: {} }, action) {
   switch (action.type) {
     case Action.SET_ACTIVE_LOCALE:
-      return { ...state, ...{ locale: action.locale } };
+      return { ...state, ...{ activeLocale: action.locale } };
     case Action.ADD_LOCALE:
       return { ...state, ...{ translations: { [action.locale]: action.translations } } };
     default:

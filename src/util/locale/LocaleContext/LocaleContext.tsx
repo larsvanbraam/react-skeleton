@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const LocaleContext = React.createContext({
-  locale: null,
+  activeLocale: null,
   translations: {},
   getTranslation: null,
 });

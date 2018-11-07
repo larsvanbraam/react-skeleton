@@ -2,9 +2,9 @@ import LocaleProvider from './LocaleProvider';
 
 import { connect } from 'react-redux';
 
-const mapStateToProps = ({ translation }) => ({
-  locale: translation.locale,
-  translations: translation.translations[translation.locale] || {},
+const mapStateToProps = ({ locale }) => ({
+  activeLocale: locale.activeLocale,
+  translations: locale.translations[locale.activeLocale] || {},
 });
 
 export default connect(mapStateToProps)(LocaleProvider);
