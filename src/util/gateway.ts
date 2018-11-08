@@ -1,5 +1,5 @@
 import axios from 'axios';
-import configManager from './configManagerInstance';
+import configManager from './configManager';
 import { URLNames } from '../data/enum/configNames';
 import { responseFormatter, errorFormatter } from './gatewayFormatter';
 

@@ -1,7 +1,7 @@
 declare function require(name: string): string;
 
 import DeviceStateTracker from 'seng-device-state-tracker';
-import configManager from './configManagerInstance';
+import configManager from './configManager';
 import DeviceState from '../data/enum/DeviceState';
 import { VariableNames } from '../data/enum/configNames';
 
