@@ -1,5 +1,5 @@
 import Home from '../page/Home';
-import About from '../page/About';
+import Formatters from '../page/Formatters';
 
 export default [
   {
@@ -9,8 +9,8 @@ export default [
     component: Home,
   },
   {
-    name: 'About',
-    path: '/about',
-    component: About,
+    name: 'Formatters',
+    path: '/formatters',
+    component: Formatters,
   },
 ];

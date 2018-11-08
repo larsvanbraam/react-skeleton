@@ -1,17 +1,22 @@
 {
   "home": {
-    "heading": "Home page!",
+    "heading": "Home",
     "paragraphs": [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus felis, volutpat at facilisis vel, tempor et arcu. Proin vitae fringilla massa. In pulvinar venenatis nulla sit amet dictum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Aliquam eget turpis sed ante pulvinar hendrerit. Pellentesque non turpis in tellus imperdiet eleifend tempor et est. Nam nec orci non felis interdum malesuada ac at est. Morbi elementum est blandit, luctus turpis non, facilisis erat. Praesent auctor, neque eu efficitur luctus, nulla ante placerat metus, ac dapibus eros risus vel dolor. Nam vel neque placerat, sollicitudin erat nec, pellentesque quam.",
+      "This string contains {count} replaced {variable|count|variables}!",
       "Donec vitae sodales ligula. Nam maximus, sapien quis pretium facilisis, magna mi elementum ex, fermentum fringilla leo turpis vitae magna. Cras sagittis nisl nisl, quis ornare odio ultricies vel. Praesent in feugiat augue. Mauris aliquet nisl non tellus convallis volutpat. Phasellus pulvinar dolor in auctor semper. Aenean sed euismod turpis. Aliquam at neque ut dolor dapibus porta. Ut elementum dapibus mauris, a pellentesque sem accumsan vel. Phasellus sed rutrum lorem, sed viverra lorem. Nullam eget odio euismod, sodales velit nec, accumsan nisl. Curabitur lobortis lorem orci, nec tincidunt nisl tincidunt vel. Nunc facilisis lorem vel odio auctor, ultricies commodo felis suscipit. Curabitur et condimentum lectus, sed scelerisque metus. Donec convallis, mauris in cursus dignissim, metus sem tristique ipsum, non maximus nibh ligula non dolor. Mauris id nisl id dui pretium placerat."
     ]
   },
-  "about": {
-    "heading": "About page!",
+  "formatters": {
+    "heading": "Formatters",
     "paragraphs": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus nibh vitae laoreet aliquet. Nunc congue ipsum vitae consequat ultrices. Duis eget tellus a ante tincidunt tempus. Nullam suscipit volutpat felis id consequat. Mauris consectetur porta aliquam. Nullam accumsan diam felis, at posuere nunc rhoncus lobortis. Nunc laoreet augue eget ultrices auctor. In lacinia et eros id molestie. Vestibulum sed turpis odio. Suspendisse ultrices molestie elementum. Sed a felis nec metus blandit commodo ac id ligula. Duis tristique, nisl nec fermentum viverra, ex neque varius mi, quis pretium felis mauris eget lacus. Vestibulum tincidunt eleifend sapien, sit amet scelerisque sapien. Vivamus massa odio, venenatis et neque vel, venenatis euismod augue.",
-      "Proin ac turpis ut felis tempor convallis sed ut est. Vestibulum a justo interdum, iaculis felis a, accumsan felis. Suspendisse leo turpis, imperdiet id enim non, dignissim efficitur ex. Donec hendrerit elit sit amet arcu vestibulum, eu tristique purus lobortis. Mauris vel nunc eget quam tristique tempor non vel ipsum. Mauris nec maximus justo, accumsan vulputate ante. Donec pulvinar iaculis volutpat. Nam ullamcorper elit sit amet metus facilisis, at maximus sapien congue.",
-      "Phasellus eleifend velit dui, quis mollis ante dignissim in. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin interdum consectetur ex, in gravida nibh vestibulum ut. Donec vel nibh eu leo convallis maximus eget fermentum felis. Donec est tortor, facilisis vel nisl quis, tincidunt placerat orci. Nam id quam eleifend, lobortis felis et, interdum neque. In aliquet nisi sed suscipit auctor. Mauris auctor posuere ullamcorper. Pellentesque vestibulum quis enim a eleifend. Nullam justo sapien, mollis eu tempor id, malesuada sed purus. Vivamus metus enim, ornare eu placerat ut, venenatis in sapien. Ut eget quam est. Nulla sodales eu lacus vitae aliquam. Ut suscipit semper libero, vitae auctor orci facilisis in. Etiam eu justo felis. Quisque placerat eros non est euismod, sit amet egestas augue pellentesque."
-    ]
+      "Formatters can be used to modify a string! See below for the included examples:"
+    ],
+    "example": {
+      "replacement": {
+        "heading": "Replacing a single variable within a string",
+        "text": "The quick brown fox jumps over the lazy {animal}"
+      }
+    }
   }
 }
