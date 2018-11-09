@@ -12,7 +12,7 @@ import { setActiveLocale } from './store/actions/localeActions';
 import deviceStateTracker from './util/deviceStateTracker';
 import { DeviceStateEvent } from 'seng-device-state-tracker';
 import LocaleProvider from './locale/LocaleProvider';
-import configManager from './util/configManager';
+import configManager from './config/configManager';
 import { VariableNames } from './data/enum/configNames';
 
 // Add the listener for the device state

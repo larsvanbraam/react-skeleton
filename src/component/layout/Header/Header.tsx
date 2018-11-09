@@ -3,7 +3,7 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Wrapper from '../../general/Wrapper';
-import routes from '../../../config/routes';
+import routes from '../../../router/routes';
 import Logo from '../../../asset/svg/logo.svg';
 import LocaleSelector from '../../general/LocaleSelector';
 

@@ -4,9 +4,9 @@ import * as React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 
-import routes from '../config/routes';
+import routes from '../router/routes';
 import Header from '../component/layout/Header';
-import RouteWithSubRoutes from '../util/RouteWithSubRoutes';
+import RouteWithSubRoutes from '../router/RouteWithSubRoutes';
 
 class App extends React.Component<{ deviceState: number }> {
   public render() {

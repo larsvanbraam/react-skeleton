@@ -1,12 +1,12 @@
 declare function require(name: string): string;
 
 import DeviceStateTracker from 'seng-device-state-tracker';
-import configManager from './configManager';
+import configManager from './../config/configManager';
 import DeviceState from '../data/enum/DeviceState';
 import { VariableNames } from '../data/enum/configNames';
 
 // Load the media queries data
-const data = <any>require('../config/mediaQueries.json');
+const data = <any>require('../data/mediaQueries.json');
 
 const deviceStateTracker = new DeviceStateTracker({
   mediaQueries: data.mediaQueries,

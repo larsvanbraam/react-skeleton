@@ -1,6 +1,6 @@
 import Action from '../../data/enum/Action';
 import axios from 'axios';
-import configManager from '../../util/configManager';
+import configManager from '../../config/configManager';
 import { VariableNames } from '../../data/enum/configNames';
 import store from '../store';
 

@@ -3,7 +3,7 @@ import * as styles from './LocaleSelector.scss';
 import * as React from 'react';
 import classNames from 'classnames';
 import { VariableNames } from '../../../data/enum/configNames';
-import configManager from '../../../util/configManager';
+import configManager from '../../../config/configManager';
 
 class LocaleSelector extends React.Component<{
   activeLocale: string;
