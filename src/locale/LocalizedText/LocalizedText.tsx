@@ -43,9 +43,7 @@ export default class LocalizedText extends React.Component<LocalizedTextProps> {
   }
 
   public render() {
-    return (
-      <LocaleContext.Consumer>{context => this.renderTranslation(context)}</LocaleContext.Consumer>
-    );
+    return <LocaleContext.Consumer>{this.renderTranslation.bind(this)}</LocaleContext.Consumer>;
   }
 }
 
