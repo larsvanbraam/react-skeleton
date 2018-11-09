@@ -44,7 +44,7 @@ module.exports = {
   build: {
     env: {
       NODE_ENV: JSON.stringify('production'),
-      VERSIONED_STATIC_ROOT: JSON.stringify(versionPath + 'static/'),
+      VERSIONED_STATIC_ROOT: JSON.stringify(versionPath),
       STATIC_ROOT: JSON.stringify(''),
       PUBLIC_PATH: JSON.stringify(publicPath),
     },

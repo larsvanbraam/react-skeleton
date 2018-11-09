@@ -10,6 +10,7 @@ const baseWebpackConfig = require('./webpack.base.config');
 const webpackHelpers = require('./webpackHelpers');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 const config = require('../../config/config');
 
@@ -84,6 +85,9 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
       svgo: null,
       gifsicle: null,
       pngquant: config.build.enablePNGQuant ? { quality: config.build.pngQuantQuality } : null,
+    }),
+    new LodashModuleReplacementPlugin({
+      paths: true,
     }),
     new CopyWebpackPlugin([
       {

@@ -55,6 +55,7 @@
     "inflection": "^1.12.0",
     "json-loader": "^0.5.7",
     "lodash": "^4.17.11",
+    "lodash-webpack-plugin": "^0.11.5",
     "mini-css-extract-plugin": "^0.4.4",
     "modernizr": "^3.6.0",
     "modernizr-loader": "^1.0.1",
