@@ -8,10 +8,10 @@ import { render } from 'react-dom';
 import App from './App';
 import store from './store/store';
 import { setDeviceState } from './store/actions/appActions';
-import { addLocale, setActiveLocale } from './store/actions/localeActions';
+import { setActiveLocale } from './store/actions/localeActions';
 import deviceStateTracker from './util/deviceStateTracker';
 import { DeviceStateEvent } from 'seng-device-state-tracker';
-import LocaleProvider from './util/locale/LocaleProvider';
+import LocaleProvider from './locale/LocaleProvider';
 import configManager from './util/configManager';
 import { VariableNames } from './data/enum/configNames';
 

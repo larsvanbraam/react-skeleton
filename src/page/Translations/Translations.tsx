@@ -3,10 +3,10 @@ import * as styles from './translations.scss';
 import * as React from 'react';
 
 import Wrapper from '../../component/general/Wrapper';
-import LocalizedText from '../../util/locale/LocalizedText';
-import { renderParagraphs } from '../../util/locale/LocaleHelper';
-import replaceFormatter from '../../util/locale/formatter/replaceFormatter';
-import pluralFormatter from '../../util/locale/formatter/pluralFormatter';
+import LocalizedText from '../../locale/LocalizedText';
+import { renderParagraphs } from '../../locale/LocaleHelper';
+import replaceFormatter from '../../locale/formatter/replaceFormatter';
+import pluralFormatter from '../../locale/formatter/pluralFormatter';
 import { toUpper } from 'lodash';
 
 class Translations extends React.Component {
