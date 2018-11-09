@@ -5,7 +5,7 @@ import { ILocaleContext } from '../LocaleContext/LocaleContext';
 interface LocalizedTextProps {
   id: string;
   render?: (data: any, applyFormatters: (...args: Array<any>) => string) => React.ReactNode;
-  formatters?: Array<{ formatter: (...args: Array<any>) => string; args: any }>;
+  formatters?: Array<{ formatter: (...args: Array<any>) => string; args?: any }>;
 }
 
 export default class LocalizedText extends React.Component<LocalizedTextProps> {

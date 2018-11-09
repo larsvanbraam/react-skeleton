@@ -8,14 +8,32 @@
       "Cras laoreet erat vitae purus vehicula malesuada. Sed luctus nulla elit, a eleifend lorem tincidunt vel. Ut blandit nunc sed ligula maximus, in feugiat dolor tristique. Suspendisse vestibulum nulla vitae sollicitudin sagittis. Donec tincidunt dui et ipsum pellentesque auctor. Sed sagittis, purus ut posuere convallis, velit sapien pharetra libero, id congue dolor erat vitae nibh. Fusce pellentesque euismod orci, a venenatis nisi fringilla sed. Suspendisse potenti. Nunc hendrerit ullamcorper congue. Sed aliquet turpis ac nulla cursus, ac semper ex rutrum. Nullam non consectetur odio. Curabitur dictum hendrerit semper. Integer tincidunt, nunc nec facilisis porttitor, neque libero semper odio, at congue sapien purus consectetur orci. Sed suscipit mattis magna sit amet tempor. Cras tempus lacus ut commodo porta. Nam sollicitudin sodales risus, eu imperdiet dolor tempus vitae."
     ]
   },
-  "about": {
-    "heading": "Over pagina!",
-    "paragraphs": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc molestie laoreet nisi, vel scelerisque quam imperdiet at. Vivamus sit amet placerat tortor. Maecenas at cursus felis, eu commodo massa. Mauris mi felis, vehicula et enim a, bibendum aliquam massa. Donec posuere massa ac ipsum condimentum, sit amet semper ipsum viverra. Donec eget nunc vel diam pellentesque vulputate. Ut luctus ex euismod lectus facilisis lobortis. Praesent at dui augue. Donec sit amet sem imperdiet, aliquet ex non, varius nulla. Quisque in nisi urna. Fusce iaculis, risus rhoncus suscipit maximus, mauris dolor rutrum lorem, et finibus est dui eget metus.",
-      "Nunc turpis nisl, dignissim ut diam ac, accumsan tempor mi. Phasellus sed nisi pharetra metus faucibus commodo. Suspendisse molestie arcu augue, in dapibus nibh malesuada sit amet. Sed dapibus posuere blandit. Cras eu ipsum id dolor fermentum volutpat euismod ac augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent vel ante at lectus aliquam volutpat. Duis sodales consectetur semper.",
-      "Fusce accumsan tortor varius, condimentum quam ac, sollicitudin nulla. Sed dictum congue ligula vitae finibus. Donec bibendum sed est at tempor. Nulla elementum lorem vehicula pulvinar maximus. Nullam euismod efficitur mollis. Duis porta semper nisl ac consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus.",
-      "Fusce tincidunt fermentum porttitor. Praesent ac odio aliquet, blandit metus quis, scelerisque dui. Aliquam semper elementum maximus. Proin placerat erat eu est volutpat suscipit. Donec nisi dui, tempus eu interdum sit amet, tristique id nunc. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent eros felis, mollis ut pellentesque id, viverra sed ligula.",
-      "Ut semper velit vitae enim fringilla, at eleifend justo luctus. Suspendisse ut purus nec est sollicitudin varius sed ac ex. Sed imperdiet eros eu cursus accumsan. Aliquam consectetur ipsum ac tortor ultricies, vitae venenatis orci blandit. Maecenas in risus ipsum. Morbi mollis velit eu nibh tincidunt, a facilisis magna semper. Etiam vestibulum dapibus molestie. Nunc et auctor urna. Ut mattis nisl vel rhoncus pellentesque. Praesent id varius ipsum. Curabitur ut fermentum sapien, sed elementum ex. Donec in elit non ex faucibus vestibulum sit amet id ex. Suspendisse eu bibendum purus, eget pharetra risus."
-    ]
+  "translations": {
+    "introduction": {
+      "heading": "Vertalingen",
+      "paragraphs": [
+        "Rendering a translation can be done with LocalizedText component that will output the string from the translation file. The LocalizedText component allows for 3 different props: id, formatters and render. The id is used to find the right key in the translation file. The formatters array is used to modify the translated string after it's fetched from the translation file. The render prop is a callback method that can be used to do some custom rendering of the translation file, for example when you want to get an array of string from the translation file and loop through them to render out different paragraphs."
+      ]
+    },
+    "formatters": {
+      "heading": "Formatters",
+      "paragraphs": [
+        "Formatter can be used to modify a localizedText, sometimes you want to replace some variables within a string or do some other manipulation to it. This can be done by adding a prop that includes methods that will modify the original translation. You can apply multiple formatters to the same translation and they will be applied on top of each other. The skeleton only contains 2 formatters but you an easily add Lodash string methods to the formatters array to modify it!",
+        "See below for the included examples:"
+      ],
+      "example": {
+        "replacement": {
+          "heading": "ReplaceFormatter",
+          "description": "This formatter replaces variables within a string.",
+          "text": "The quick brown {animal} jumps over the lazy dog"
+        },
+        "plural": {
+          "heading": "PuralFormatter",
+          "description":
+          "This formatter chooses the right plural version of a translation based on a number.",
+          "text": "The quick brown {fox|count|foxes} jumps over the lazy dog"
+        }
+      }
+    }
   }
 }

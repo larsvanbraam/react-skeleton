@@ -1,0 +1,27 @@
+.translations {
+  section {
+    margin-bottom: $gridSize * 4;
+  }
+
+  input,
+  pre {
+    margin: 0 0 $gridSize * 2;
+    font-size: 1.4rem;
+  }
+
+  pre {
+    padding: $gridSize;
+    border: 1px solid rgba(black, 0.2);
+  }
+
+  .example {
+    border: 1px solid rgba(black, 0.2);
+    padding: $gridSize * 2;
+    margin-bottom: $gridSize * 2;
+
+    input {
+      @include size(100%, auto);
+      padding: $gridSize;
+    }
+  }
+}
