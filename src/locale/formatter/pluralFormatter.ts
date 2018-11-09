@@ -1,5 +1,4 @@
 import { inflect } from 'inflection';
-import replaceFormatter from './replaceFormatter';
 
 /**
  * # Pluralize part of a string with predefined options.
