@@ -2,12 +2,10 @@ import * as React from 'react';
 import LocaleContext from '../LocaleContext';
 import { ILocaleContext } from '../LocaleContext/LocaleContext';
 
-interface LocalizedTextProps {
-  id: string;
-  render?: (data: any, applyFormatters: (...args: Array<any>) => string) => React.ReactNode;
-  formatters?: Array<{ formatter: (...args: Array<any>) => string; args?: any }>;
-}
-
+/**
+ * The localized text component is used to render out translated strings
+ * from the provided matching json files. .
+ */
 export default class LocalizedText extends React.Component<LocalizedTextProps> {
   private static defaultProps = {
     formatters: [],
@@ -30,6 +28,8 @@ export default class LocalizedText extends React.Component<LocalizedTextProps> {
    * @param context
    */
   private renderTranslation(context: ILocaleContext): React.ReactNode {
+    // Localization is disabled so we cannot get a translation;
+    if (!context.getTranslation) return this.props.id;
     // Get the translation from the context
     const translation = context.getTranslation(this.props.id);
 
@@ -44,11 +44,13 @@ export default class LocalizedText extends React.Component<LocalizedTextProps> {
 
   public render() {
     return (
-      <React.Fragment>
-        <LocaleContext.Consumer>
-          {context => this.renderTranslation(context)}
-        </LocaleContext.Consumer>
-      </React.Fragment>
+      <LocaleContext.Consumer>{context => this.renderTranslation(context)}</LocaleContext.Consumer>
     );
   }
+}
+
+interface LocalizedTextProps {
+  id: string;
+  render?: (data: any, applyFormatters: (...args: Array<any>) => string) => React.ReactNode;
+  formatters?: Array<{ formatter: (...args: Array<any>) => string; args?: any }>;
 }

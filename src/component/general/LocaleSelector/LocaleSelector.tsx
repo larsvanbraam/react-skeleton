@@ -2,14 +2,14 @@ import * as styles from './LocaleSelector.scss';
 
 import * as React from 'react';
 import classNames from 'classnames';
-import { VariableNames } from '../../../data/enum/configNames';
+import { PropertyNames } from '../../../data/enum/configNames';
 import configManager from '../../../config/configManager';
 
 class LocaleSelector extends React.Component<{
   activeLocale: string;
   setActiveLocale: () => void;
 }> {
-  private locales = configManager.getVariable(VariableNames.LOCALES);
+  private locales = configManager.getProperty(PropertyNames.LOCALES);
 
   public render() {
     return (

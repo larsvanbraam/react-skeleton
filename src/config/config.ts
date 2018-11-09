@@ -1,4 +1,4 @@
-import { EnvironmentNames, URLNames, VariableNames } from '../data/enum/configNames';
+import { EnvironmentNames, URLNames, VariableNames, PropertyNames } from '../data/enum/configNames';
 
 const config = {
   environments: {
@@ -23,19 +23,22 @@ const config = {
     },
   },
   variables: {
+    [VariableNames.LOCALE_ENABLED]: true,
+    [VariableNames.LOCALE_ROUTING_ENABLED]: false,
+    [VariableNames.SHOW_STATE_INDICATOR]: true,
     [VariableNames.VERSIONED_STATIC_ROOT]:
       (window.webpackPublicPath || process.env.PUBLIC_PATH) + process.env.VERSIONED_STATIC_ROOT,
     [VariableNames.STATIC_ROOT]:
       (window.webpackPublicPath || process.env.PUBLIC_PATH) + process.env.STATIC_ROOT,
     [VariableNames.PUBLIC_PATH]: window.webpackPublicPath || process.env.PUBLIC_PATH,
-    [VariableNames.SHOW_STATE_INDICATOR]: true,
-    [VariableNames.LOCALES]: ['en', 'nl'],
-    [VariableNames.DEFAULT_LOCALE]: 'en',
   },
   urls: {
     [URLNames.API]: `${process.env.PUBLIC_PATH}api/`,
   },
-  properties: {},
+  properties: {
+    [PropertyNames.LOCALES]: ['en', 'nl'],
+    [PropertyNames.DEFAULT_LOCALE]: 'en',
+  },
 };
 
 let environment = EnvironmentNames.PRODUCTION;

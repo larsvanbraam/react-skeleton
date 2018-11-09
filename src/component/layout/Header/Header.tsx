@@ -6,6 +6,8 @@ import Wrapper from '../../general/Wrapper';
 import routes from '../../../router/routes';
 import Logo from '../../../asset/svg/logo.svg';
 import LocaleSelector from '../../general/LocaleSelector';
+import { VariableNames } from '../../../data/enum/configNames';
+import configManager from '../../../config/configManager';
 
 export const Header = () => (
   <header className={styles.header}>
@@ -14,7 +16,7 @@ export const Header = () => (
         <NavLink exact to="/">
           <Logo className={styles.icon} />️<strong>React Skeleton</strong>
         </NavLink>
-        <LocaleSelector />
+        {configManager.getVariable(VariableNames.LOCALE_ENABLED) ? <LocaleSelector /> : null}
       </div>
       <nav>
         {routes.map(({ name, path }) => (
