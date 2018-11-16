@@ -1,6 +1,6 @@
 import * as React from 'react';
-import LocaleContext from '../LocaleContext';
 import { get } from 'lodash';
+import LocaleContext from '../LocaleContext';
 
 interface ILocaleProviderProps {
   activeLocale: string;
