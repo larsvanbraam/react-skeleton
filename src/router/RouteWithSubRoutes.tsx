@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom';
 export default function(route) {
   return (
     <Route
+      key={route.path}
       path={route.path}
       exact={route.exact}
       render={props => (

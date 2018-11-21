@@ -32,7 +32,6 @@ export default class LocalizedText extends React.Component<LocalizedTextProps> {
     if (!context.getTranslation) return this.props.id;
     // Get the translation from the context
     const translation = context.getTranslation(this.props.id);
-
     // Use the custom render method if it's provided
     if (this.props.render) {
       return this.props.render(translation, this.applyFormatters.bind(this));

@@ -1,3 +1,5 @@
 import LocaleSetup from './LocaleSetup';
+import { withRouter } from 'react-router';
 
-export default LocaleSetup;
+export default withRouter(LocaleSetup);
+// export default LocaleSetup;

@@ -1,24 +1,18 @@
 import * as styles from './app.scss';
 
 import * as React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 
-import routes from '../router/routes';
 import Header from '../component/layout/Header';
-import RouteWithSubRoutes from '../router/RouteWithSubRoutes';
+import LocaleSetup from '../locale/LocaleSetup';
 
-class App extends React.Component<{ deviceState: number }> {
+class App extends React.Component<{ deviceState: number; locale: string }> {
   public render() {
     return (
-      <Router>
-        <div className={styles.app}>
-          <Header />
-          {routes.map((route, i) => (
-            <RouteWithSubRoutes key={i} {...route} />
-          ))}
-        </div>
-      </Router>
+      <div className={styles.app}>
+        <Header />
+        {this.props.children}
+      </div>
     );
   }
 }

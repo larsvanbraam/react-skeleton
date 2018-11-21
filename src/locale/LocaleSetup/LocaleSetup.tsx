@@ -1,21 +1,46 @@
 import * as React from 'react';
+import { Redirect, RouteComponentProps } from 'react-router-dom';
 import configManager from '../../config/configManager';
-import { VariableNames, PropertyNames } from '../../data/enum/configNames';
+import { PropertyNames, VariableNames } from '../../data/enum/configNames';
 import LocaleProvider from '../LocaleProvider';
 import { setActiveLocale } from '../../store/actions/localeActions';
 import store from '../../store';
+import Param from '../../data/enum/Param';
 
-const LocaleSetup = ({ children }) => {
-  if (configManager.getVariable(VariableNames.LOCALE_ENABLED)) {
-    // Add the default locale and activate it when it's loaded!
-    const locale = configManager.getProperty(PropertyNames.DEFAULT_LOCALE);
-    // Activate the default locale
+class LocaleSetup extends React.Component<RouteComponentProps<any>> {
+  private static activateLocale(locale): void {
     store.dispatch(setActiveLocale(locale));
-    // Wrap the app in the locale provider
-    return <LocaleProvider>{children}</LocaleProvider>;
   }
 
-  return children;
-};
+  private static wrapWithLocaleProvider(children: any): any {
+    if (configManager.getVariable(VariableNames.LOCALE_ENABLED)) {
+      return <LocaleProvider>{children}</LocaleProvider>;
+    }
+    return children;
+  }
+
+  /**
+   * @private
+   * @method static defaultLocale
+   */
+  private static getDefaultLocale(): string {
+    return configManager.getProperty(PropertyNames.DEFAULT_LOCALE);
+  }
+
+  public componentDidMount(): void {
+    if (configManager.getVariable(VariableNames.LOCALE_ENABLED)) {
+      LocaleSetup.activateLocale(
+        this.props.match.params[Param.LOCALE] || LocaleSetup.getDefaultLocale(),
+      );
+    }
+  }
+
+  public render() {
+    if (!this.props.match.params[Param.LOCALE]) {
+      return <Redirect to={`/${LocaleSetup.getDefaultLocale()}`} />;
+    }
+    return LocaleSetup.wrapWithLocaleProvider(this.props.children);
+  }
+}
 
 export default LocaleSetup;
