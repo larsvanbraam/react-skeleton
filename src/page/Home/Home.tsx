@@ -5,8 +5,8 @@ import * as React from 'react';
 import Wrapper from '../../component/general/Wrapper';
 import LocalizedText from '../../locale/LocalizedText';
 import { renderParagraphs } from '../../locale/LocaleHelper';
-import replaceFormatter from '../../locale/formatter/replaceFormatter';
-import pluralFormatter from '../../locale/formatter/pluralFormatter';
+import replaceFormatter from '../../locale/util/formatter/replaceFormatter';
+import pluralFormatter from '../../locale/util/formatter/pluralFormatter';
 
 class Home extends React.Component {
   public state = {
