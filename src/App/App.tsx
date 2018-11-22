@@ -5,8 +5,9 @@ import { hot } from 'react-hot-loader';
 
 import Header from '../component/layout/Header';
 
-class App extends React.Component<{ deviceState: number; locale: string }> {
+class App extends React.Component<{ deviceState: number; }> {
   public render() {
+    console.log('App render triggered');
     return (
       <div className={styles.app}>
         <Header />

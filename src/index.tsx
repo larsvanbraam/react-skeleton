@@ -32,7 +32,7 @@ render(
         path={`/:${Param.LOCALE}?`}
         render={props => (
           <LocaleSetup {...props}>
-            <App {...props}>
+            <App>
               {routes.map(route => (
                 <RouteWithSubRoutes key={route.path} {...route} />
               ))}
