@@ -1,13 +1,22 @@
+// https://github.com/shelljs/shelljs
+require('shelljs/global');
+
+const ora = require('ora');
 const webpack = require('webpack');
-const webpackConfig = require('../config/webpack/webpack.prod.config');
+const webpackConfig = require('../config/webpack/webpack.conf.prod');
 const fs = require('fs-extra');
 const chalk = require('chalk');
+
+const spinner = ora('building for production...');
+spinner.start();
 
 //empty build folder because webpack-cleanup-plugin doesn't remove folders
 fs.emptyDirSync(webpackConfig.output.path);
 
 webpack(webpackConfig, function(err, stats) {
+  spinner.stop();
   if (err) throw err;
+
   if (stats.hasErrors()) {
     throw stats.toString({
       colors: true,
