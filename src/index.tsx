@@ -12,9 +12,9 @@ import { setDeviceState } from './store/actions/appActions';
 import deviceStateTracker from './util/deviceStateTracker';
 import { DeviceStateEvent } from 'seng-device-state-tracker';
 import LocaleSetup from './locale/LocaleSetup';
-import routes from './router/routes';
-import RouteWithSubRoutes from './router/RouteWithSubRoutes';
 import Param from './data/enum/Param';
+import routes from './router/routes';
+import RouteWithSubRoutes from './router/util/RouteWithSubRoutes';
 
 // Add the listener for the device state
 deviceStateTracker.addEventListener(DeviceStateEvent.STATE_UPDATE, (event: DeviceStateEvent) =>
@@ -30,13 +30,12 @@ render(
     <Router>
       <Route
         path={`/:${Param.LOCALE}?`}
-        render={props => (
-          <LocaleSetup {...props}>
-            <App>
-              {routes.map(route => (
-                <RouteWithSubRoutes key={route.path} {...route} />
-              ))}
-            </App>
+        render={({ match, location }) => (
+          <LocaleSetup match={match}>
+            <App {...location} />
+            {routes.map(route => (
+              <RouteWithSubRoutes key={route.path} {...route} />
+            ))}
           </LocaleSetup>
         )}
       />

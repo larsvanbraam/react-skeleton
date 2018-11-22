@@ -8,4 +8,4 @@ export default interface IRoute {
   exact?: boolean;
   localize?: boolean;
   children?: Array<IRoute>;
-};
+}

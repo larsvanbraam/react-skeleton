@@ -7,7 +7,7 @@ import { setActiveLocale } from '../../store/actions/localeActions';
 import store from '../../store';
 import Param from '../../data/enum/Param';
 
-class LocaleSetup extends React.Component<RouteComponentProps<any>> {
+class LocaleSetup extends React.Component<{ match: any }> {
   private static activateLocale(locale): void {
     store.dispatch(setActiveLocale(locale));
   }

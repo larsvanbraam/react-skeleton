@@ -2,6 +2,8 @@ import Home from '../page/Home';
 import Translations from '../page/Translations';
 import { localizeRoutes } from '../locale/util/localeUtils';
 import IRoute from './interface/IRoute';
+import { PropertyNames, VariableNames } from '../data/enum/configNames';
+import configManager from '../config/configManager';
 
 /**
  * Enum containing all the names of the routes that are used in the application
@@ -47,5 +49,6 @@ const routes: Array<IRoute> = [
   },
 ];
 
-// export default routes;
-export default localizeRoutes(routes);
+export default (configManager.getVariable(VariableNames.LOCALE_ENABLED)
+  ? localizeRoutes(routes)
+  : routes);

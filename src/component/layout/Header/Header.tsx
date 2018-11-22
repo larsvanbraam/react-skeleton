@@ -16,7 +16,7 @@ class Header extends React.Component<{ activeLocale: string }> {
    * @param path
    */
   private localizePath(path: string): string {
-    return path.replace(`:${Param.LOCALE}`, this.props.activeLocale);
+    return path.replace(`:${Param.LOCALE}`, this.props.activeLocale || 'nl');
   }
 
   /**
