@@ -13,8 +13,6 @@ import deviceStateTracker from './util/deviceStateTracker';
 import { DeviceStateEvent } from 'seng-device-state-tracker';
 import LocaleSetup from './locale/LocaleSetup';
 import Param from './data/enum/Param';
-import routes from './router/routes';
-import RouteWithSubRoutes from './router/util/RouteWithSubRoutes';
 
 // Add the listener for the device state
 deviceStateTracker.addEventListener(DeviceStateEvent.STATE_UPDATE, (event: DeviceStateEvent) =>

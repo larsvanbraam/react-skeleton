@@ -24,7 +24,7 @@ const config = {
   },
   variables: {
     [VariableNames.LOCALE_ENABLED]: true,
-    [VariableNames.LOCALE_ROUTING_ENABLED]: false,
+    [VariableNames.LOCALE_ROUTING_ENABLED]: true,
     [VariableNames.SHOW_STATE_INDICATOR]: true,
     [VariableNames.VERSIONED_STATIC_ROOT]:
       (window.webpackPublicPath || process.env.PUBLIC_PATH) + process.env.VERSIONED_STATIC_ROOT,

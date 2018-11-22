@@ -36,7 +36,10 @@ class LocaleSetup extends React.Component<{ match: any }> {
   }
 
   public render() {
-    if (!this.props.match.params[Param.LOCALE]) {
+    if (
+      configManager.getVariable(VariableNames.LOCALE_ROUTING_ENABLED) &&
+      !this.props.match.params[Param.LOCALE]
+    ) {
       return <Redirect to={`/${LocaleSetup.getDefaultLocale()}`} />;
     }
     return LocaleSetup.wrapWithLocaleProvider(this.props.children);

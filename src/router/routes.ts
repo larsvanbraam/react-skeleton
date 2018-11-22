@@ -49,6 +49,8 @@ const routes: Array<IRoute> = [
   },
 ];
 
-export default (configManager.getVariable(VariableNames.LOCALE_ENABLED)
-  ? localizeRoutes(routes)
-  : routes);
+const localeRoutingEnabled =
+  configManager.getVariable(VariableNames.LOCALE_ENABLED) &&
+  configManager.getVariable(VariableNames.LOCALE_ROUTING_ENABLED);
+
+export default (localeRoutingEnabled ? localizeRoutes(routes) : routes);
