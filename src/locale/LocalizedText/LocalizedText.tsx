@@ -6,7 +6,11 @@ import { ILocaleContext } from '../LocaleContext/LocaleContext';
  * The localized text component is used to render out translated strings
  * from the provided matching json files. .
  */
-export default class LocalizedText extends React.Component<LocalizedTextProps> {
+class LocalizedText extends React.Component<{
+  id: string;
+  render?: (data: any, applyFormatters: (...args: Array<any>) => string) => React.ReactNode;
+  formatters?: Array<{ formatter: (...args: Array<any>) => string; args?: any }>;
+}> {
   private static defaultProps = {
     formatters: [],
   };
@@ -25,7 +29,7 @@ export default class LocalizedText extends React.Component<LocalizedTextProps> {
    * Render the translation either through the render method or return the
    * translated string if no render method is provided.
    *
-   * @param context
+   * @param context The context of the LocaleContext that provides the translation data.
    */
   private renderTranslation(context: ILocaleContext): React.ReactNode {
     // Localization is disabled so we cannot get a translation;
@@ -46,8 +50,4 @@ export default class LocalizedText extends React.Component<LocalizedTextProps> {
   }
 }
 
-interface LocalizedTextProps {
-  id: string;
-  render?: (data: any, applyFormatters: (...args: Array<any>) => string) => React.ReactNode;
-  formatters?: Array<{ formatter: (...args: Array<any>) => string; args?: any }>;
-}
+export default LocalizedText;

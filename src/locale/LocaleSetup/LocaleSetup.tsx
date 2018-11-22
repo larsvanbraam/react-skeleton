@@ -35,9 +35,9 @@ class LocaleSetup extends React.Component<{ match: match<{ [Param.LOCALE]: strin
   /**
    * If the locale is enabled we want to wrap the application in a LocaleProvider that provides
    * all child components with the LocaleContext so we can render out localized text.
-   * @param children
+   * @param children The child components that should be wrapped with the LocaleProvider
    */
-  private static wrapWithLocaleProvider(children: any): any {
+  private static wrapWithLocaleProvider(children: React.ReactNode): any {
     if (LocaleSetup.LOCALE_ENABLED) {
       return <LocaleProvider>{children}</LocaleProvider>;
     }
