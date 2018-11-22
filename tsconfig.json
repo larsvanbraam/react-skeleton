@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es6",
     "jsx": "react",
-    "module": "commonjs"
+    "target": "es2017",
+    "module": "esnext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"]
 }

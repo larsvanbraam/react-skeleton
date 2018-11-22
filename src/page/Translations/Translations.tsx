@@ -7,7 +7,6 @@ import LocalizedText from '../../locale/LocalizedText';
 import { renderParagraphs } from '../../locale/LocaleHelper';
 import replaceFormatter from '../../locale/formatter/replaceFormatter';
 import pluralFormatter from '../../locale/formatter/pluralFormatter';
-import { toUpper } from 'lodash';
 
 class Translations extends React.Component {
   state = {

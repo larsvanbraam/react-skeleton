@@ -1,4 +1,4 @@
-import { trim } from 'lodash';
+import trim from 'lodash/trim';
 import Param from '../../data/enum/Param';
 
 import configManager from '../../config/configManager';

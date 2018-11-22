@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { get } from 'lodash';
+import get from 'lodash/get';
 import LocaleContext from '../LocaleContext';
 
 /**
