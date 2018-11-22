@@ -1,26 +1,47 @@
-import * as React from 'react';
 import Home from '../page/Home';
 import Translations from '../page/Translations';
 import { localizeRoutes } from '../locale/util/localeUtils';
+import IRoute from './interface/IRoute';
 
-export interface IRoute {
-  name: string;
-  path: string;
-  component: React.ComponentClass;
-  exact?: boolean;
-  localize?: boolean;
-  children?: Array<IRoute>;
+/**
+ * Enum containing all the names of the routes that are used in the application
+ *
+ * Example usage:
+ * ```typescript
+ * ...
+ * HOME = 'home',
+ * ...
+ * ```
+ */
+export enum RouteName {
+  HOME = 'home',
+  TRANSLATIONS = 'translations',
 }
 
+/**
+ * Array containing all the routes that are used in the application
+ *
+ * Example usage:
+ * ```typescript
+ * ...
+ * {
+ *   name: RouteName.HOME,
+ *   path: '/',
+ *   component: Home,
+ *   exact: true,
+ * },
+ * ...
+ * ```
+ */
 const routes: Array<IRoute> = [
   {
-    name: 'Home',
+    name: RouteName.HOME,
     path: '/',
     component: Home,
     exact: true,
   },
   {
-    name: 'Translations',
+    name: RouteName.TRANSLATIONS,
     path: '/translations',
     component: Translations,
   },

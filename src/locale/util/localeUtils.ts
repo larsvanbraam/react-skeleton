@@ -1,8 +1,9 @@
 import { trim } from 'lodash';
 import Param from '../../data/enum/Param';
-import { IRoute } from '../../router/routes';
+
 import configManager from '../../config/configManager';
 import { PropertyNames } from '../../data/enum/configNames';
+import IRoute from '../../router/interface/IRoute';
 
 /**
  * Update the active locale in the URL
