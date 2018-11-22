@@ -33,9 +33,6 @@ render(
         render={({ match, location }) => (
           <LocaleSetup match={match}>
             <App {...location} />
-            {routes.map(route => (
-              <RouteWithSubRoutes key={route.path} {...route} />
-            ))}
           </LocaleSetup>
         )}
       />

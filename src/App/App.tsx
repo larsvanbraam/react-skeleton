@@ -11,7 +11,9 @@ class App extends React.Component<{ deviceState: number }> {
     return (
       <div className={styles.app}>
         <Header />
-        {this.props.children}
+        {routes.map(route => (
+          <RouteWithSubRoutes key={route.path} {...route} />
+        ))}
       </div>
     );
   }
