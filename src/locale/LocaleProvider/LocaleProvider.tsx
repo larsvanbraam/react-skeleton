@@ -2,15 +2,17 @@ import * as React from 'react';
 import { get } from 'lodash';
 import LocaleContext from '../LocaleContext';
 
-interface ILocaleProviderProps {
+/**
+ * The LocaleProvider will wrap the children with the LocaleContext so we can easily call
+ * the getTranslation method without having to map the store props every time.
+ */
+class LocaleProvider extends React.Component<{
   activeLocale: string;
   translations: { [key: string]: string };
-}
-
-class LocaleProvider extends React.Component<ILocaleProviderProps> {
+}> {
   /**
    * Retrieve the text from the translations, if it's not found we return the original id
-   * @param id
+   * @param id The id of the translation, this is a dot notation of the object structure.
    */
   public getTranslation(id: string): string {
     return get(this.props.translations, id) || id;
