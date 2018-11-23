@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build-tools/config/webpack/webpack.conf.dev.js",
     "build": "cross-env NODE_ENV=production node build-tools/script/build.js",
+    "clean": "node ./build-tools/script/cleanup",
     "lint:js": "eslint src --ext .js --cache",
     "lint:ts": "tslint src/**/*.ts -c .tslintrc.js -p tsconfig.json -t verbose",
     "analyze": "npm run build -- --analyze",
@@ -84,7 +85,7 @@
     "seng-config": "^1.1.0",
     "seng-device-state-tracker": "^1.1.4",
     "seng-scss": "^1.1.1",
-    "shelljs": "^0.8.2",
+    "shelljs": "^0.8.3",
     "style-loader": "^0.23.1",
     "tslint": "^5.11.0",
     "tslint-config-airbnb": "^5.11.0",
