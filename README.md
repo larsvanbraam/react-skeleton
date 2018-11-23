@@ -42,8 +42,6 @@ This boilerplate comes with some sample pages, blocks and components. If you don
 yarn clean
 ```
 
-yarn clean:boilerplate
-
 ### Config
 The most basic settings can be found and changed in build-tools/config/index.js.
 
