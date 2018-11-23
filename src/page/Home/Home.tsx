@@ -1,12 +1,9 @@
-import * as styles from './home.scss';
+import * as styles from './Home.scss';
 
 import * as React from 'react';
 
 import Wrapper from '../../component/general/Wrapper';
 import LocalizedText from '../../locale/LocalizedText';
-import { renderParagraphs } from '../../locale/LocaleHelper';
-import replaceFormatter from '../../locale/util/formatter/replaceFormatter';
-import pluralFormatter from '../../locale/util/formatter/pluralFormatter';
 import Header from '../../component/layout/Header';
 
 class Home extends React.Component {
@@ -22,24 +19,10 @@ class Home extends React.Component {
           <h2>
             <LocalizedText id="home.heading" />
           </h2>
-          <LocalizedText
-            id="home.paragraphs"
-            render={renderParagraphs}
-            formatters={[
-              {
-                formatter: replaceFormatter,
-                args: {
-                  count: this.state.replaceCount,
-                },
-              },
-              {
-                formatter: pluralFormatter,
-                args: {
-                  count: this.state.replaceCount,
-                },
-              },
-            ]}
-          />
+          <p>
+            <LocalizedText id={'home.paragraph'} />
+          </p>
+          <pre>{`$ yarn clean`}</pre>
         </Wrapper>
       </section>
     );
