@@ -3,6 +3,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   background: #20232a;
   color: white;
+  margin-bottom: $gridSize * 2;
 
   .icon {
     @include size($gridSize * 4);

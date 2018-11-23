@@ -7,6 +7,7 @@ import LocalizedText from '../../locale/LocalizedText';
 import { renderParagraphs } from '../../locale/LocaleHelper';
 import replaceFormatter from '../../locale/util/formatter/replaceFormatter';
 import pluralFormatter from '../../locale/util/formatter/pluralFormatter';
+import Header from '../../component/layout/Header';
 
 class Translations extends React.Component {
   state = {
@@ -33,6 +34,7 @@ class Translations extends React.Component {
   public render() {
     return (
       <section className={styles.translations}>
+        <Header />
         <Wrapper>
           <section>
             <h2>

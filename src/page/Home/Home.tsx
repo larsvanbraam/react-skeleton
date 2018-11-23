@@ -7,6 +7,7 @@ import LocalizedText from '../../locale/LocalizedText';
 import { renderParagraphs } from '../../locale/LocaleHelper';
 import replaceFormatter from '../../locale/util/formatter/replaceFormatter';
 import pluralFormatter from '../../locale/util/formatter/pluralFormatter';
+import Header from '../../component/layout/Header';
 
 class Home extends React.Component {
   public state = {
@@ -16,6 +17,7 @@ class Home extends React.Component {
   public render() {
     return (
       <section className={styles.home}>
+        <Header />
         <Wrapper>
           <h2>
             <LocalizedText id="home.heading" />
