@@ -2,7 +2,7 @@ import Home from '../page/Home';
 import Translations from '../page/Translations';
 import { localizeRoutes } from '../locale/util/localeUtils';
 import IRoute from './interface/IRoute';
-import { PropertyNames, VariableNames } from '../data/enum/configNames';
+import { VariableNames } from '../data/enum/configNames';
 import configManager from '../config/configManager';
 
 /**
