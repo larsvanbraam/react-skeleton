@@ -27,6 +27,12 @@
           "description":
             "This formatter chooses the right plural version of a translation based on a number.",
           "text": "The quick brown {fox|count|foxes} jumps over the lazy dog"
+        },
+        "custom": {
+          "heading": "CustomFormatter",
+          "description":
+          "Apply any custom function as a formatter to modify the string, in this example we add lodash/toUpper",
+          "text": "The quick brown fox jumps over the lazy dog"
         }
       }
     }

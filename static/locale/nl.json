@@ -13,7 +13,7 @@
     "formatters": {
       "heading": "Formatters",
       "paragraphs": [
-        "Formatter can be used to modify a localizedText, sometimes you want to replace some variables within a string or do some other manipulation to it. This can be done by adding a prop that includes methods that will modify the original translation. You can apply multiple formatters to the same translation and they will be applied on top of each other. The skeleton only contains 2 formatters but you an easily add Lodash string methods to the formatters array to modify it!",
+        "Formatter can be used to modify a localizedText, sometimes you want to replace some variables within a string or do some other manipulation to it. This can be done by adding a prop that includes methods that will modify the original translation. You can apply multiple formatters to the same translation and they will be applied on top of each other. The skeleton only contains 2 formatters but you an easily add custom string methods to the formatters array to modify it!",
         "See below for the included examples:"
       ],
       "example": {
@@ -27,6 +27,12 @@
           "description":
           "This formatter chooses the right plural version of a translation based on a number.",
           "text": "The quick brown {fox|count|foxes} jumps over the lazy dog"
+        },
+        "custom": {
+          "heading": "CustomFormatter",
+          "description":
+          "Apply any custom function as a formatter to modify the string, in this example we add lodash/toUpper",
+          "text": "The quick brown fox jumps over the lazy dog"
         }
       }
     }

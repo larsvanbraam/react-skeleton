@@ -1,6 +1,7 @@
 import * as styles from './translations.scss';
 
 import * as React from 'react';
+import toUpper from 'lodash/toUpper';
 
 import Wrapper from '../../component/general/Wrapper';
 import LocalizedText from '../../locale/component/LocalizedText';
@@ -154,6 +155,33 @@ class Translations extends React.Component {
                         args: {
                           count: this.state.dogCount,
                         },
+                      },
+                    ]}
+                  />
+                </pre>
+              </div>
+            </div>
+            <div className={styles.example}>
+              <h3>
+                <LocalizedText id="translations.formatters.example.custom.heading" />
+              </h3>
+              <p>
+                <LocalizedText id="translations.formatters.example.custom.description" />
+              </p>
+              <div>
+                <h4>Source</h4>
+                <pre>
+                  <LocalizedText id="translations.formatters.example.custom.text" />
+                </pre>
+              </div>
+              <div>
+                <h4>Result</h4>
+                <pre>
+                  <LocalizedText
+                    id="translations.formatters.example.custom.text"
+                    formatters={[
+                      {
+                        formatter: toUpper,
                       },
                     ]}
                   />
