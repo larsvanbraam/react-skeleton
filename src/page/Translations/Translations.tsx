@@ -3,7 +3,7 @@ import * as styles from './translations.scss';
 import * as React from 'react';
 
 import Wrapper from '../../component/general/Wrapper';
-import LocalizedText from '../../locale/LocalizedText';
+import LocalizedText from '../../locale/component/LocalizedText';
 import { renderParagraphs } from '../../locale/LocaleHelper';
 import replaceFormatter from '../../locale/util/formatter/replaceFormatter';
 import pluralFormatter from '../../locale/util/formatter/pluralFormatter';

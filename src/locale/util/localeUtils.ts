@@ -24,6 +24,16 @@ export function isValidLocale(locale: string): boolean {
 }
 
 /**
+ * Localize the provided path so the react router understands the url
+ *
+ * @param path The path that you want to add the locale to
+ * @param locale The locale that you want to add to the path
+ */
+export function localizePath(path: string, locale: string) {
+  return path.replace(`:${Param.LOCALE}`, locale);
+}
+
+/**
  * Prefix the current path with the provided prefix
  * @param path
  * @param prefix

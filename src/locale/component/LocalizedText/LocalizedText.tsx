@@ -1,6 +1,6 @@
 import * as React from 'react';
-import LocaleContext from '../LocaleContext';
-import { ILocaleContext } from '../LocaleContext/LocaleContext';
+import LocaleContext from '../../LocaleContext';
+import { ILocaleContext } from '../../LocaleContext/LocaleContext';
 
 /**
  * The localized text component is used to render out translated strings
