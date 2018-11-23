@@ -61,6 +61,20 @@ class Translations extends React.Component {
               <pre>
                 {`<LocalizedText
   id="translation.selector"
+  render="(translation) => <p>{translation}</p>"/>`}
+              </pre>
+              <h3>Render with formatters example</h3>
+              <pre>
+                {`<LocalizedText
+  id="translation.selector"
+  formatters="[
+    {
+      formatter: replaceFormatter,
+      args: {
+        varToReplace: 'valueToReplaceVarWith'
+      }
+    }
+  ]"
   render="(translation, applyFormatters) => <p>{applyFormatters(translation)}</p>"/>`}
               </pre>
             </div>
