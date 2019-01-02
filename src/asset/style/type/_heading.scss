@@ -6,15 +6,21 @@ h4 {
 }
 
 :global {
+  .heading-01,
+  .heading-02,
+  .heading-03 {
+    font-weight: font-weight(bold);
+  }
+
   .heading-01 {
-    font: font-weight(bold) 2.8rem / 1 $fontRoboto;
+    font-size: 2.8rem;
   }
 
   .heading-02 {
-    font: font-weight(bold) 1.8rem / 1 $fontRoboto;
+    font-size: 1.8rem;
   }
 
   .heading-03 {
-    font: font-weight(bold) 1.4rem / 1 $fontRoboto;
+    font-size: 1.4rem;
   }
 }
