@@ -57,6 +57,11 @@ async function asyncShell(command) {
 async function replaceInFiles() {
   const configFile = path.join(projectRoot, 'src/config/config.ts');
   const routesFile = path.join(projectRoot, 'src/router/routes.ts');
+  const baseFile = path.join(projectRoot, 'src/asset/style/layout/_base.scss');
+  const headingFile = path.join(projectRoot, 'src/asset/style/type/_heading.scss');
+  const copyFile = path.join(projectRoot, 'src/asset/style/type/_copy.scss');
+  const fontFile = path.join(projectRoot, 'src/asset/style/type/_font.scss');
+  const variablesFile = path.join(projectRoot, 'src/asset/style/util/_variable.scss');
 
   await replaceInFile({
     files: configFile,
@@ -106,6 +111,29 @@ async function replaceInFiles() {
       '  },',
     to: ''
   });
+
+  await replaceInFile({
+    files: [headingFile, copyFile, fontFile],
+    from: /(.)/g,
+    to: '',
+  })
+
+  await replaceInFile({
+    files: variablesFile,
+    from: [
+      '$fontRoboto: \'Roboto\', sans-serif;',
+      '$gridSize: 0.8rem',
+      '$gutterSize: $gridSize * 2;',
+      '$colorPrimary: #61dafb;',
+    ],
+    to: '',
+  })
+
+  await replaceInFile({
+    files: baseFile,
+    from: 'font-family: $fontRoboto;',
+    to: '',
+  })
 }
 
 clean();
