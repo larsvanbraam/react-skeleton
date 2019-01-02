@@ -16,7 +16,7 @@ class Home extends React.Component {
       <section className={styles.home}>
         <Header />
         <Wrapper>
-          <h2>
+          <h2 className="heading-01">
             <LocalizedText id="home.heading" />
           </h2>
           <p>

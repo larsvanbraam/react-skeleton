@@ -5,14 +5,16 @@ h4 {
   margin-bottom: $gridSize * 2;
 }
 
-h2 {
-  font: font-weight(bold) 2.8rem / 1 $fontRoboto;
-}
+:global {
+  .heading-01 {
+    font: font-weight(bold) 2.8rem / 1 $fontRoboto;
+  }
 
-h3 {
-  font: font-weight(bold) 1.8rem / 1 $fontRoboto;
-}
+  .heading-02 {
+    font: font-weight(bold) 1.8rem / 1 $fontRoboto;
+  }
 
-h4 {
-  font: font-weight(bold) 1.4rem / 1 $fontRoboto;
+  .heading-03 {
+    font: font-weight(bold) 1.4rem / 1 $fontRoboto;
+  }
 }
