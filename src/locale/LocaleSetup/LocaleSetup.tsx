@@ -56,7 +56,7 @@ class LocaleSetup extends React.Component<{ match: match<{ [Param.LOCALE]: strin
 
       store.dispatch(setActiveLocale(locale || defaultLocale));
 
-      if (!isValidLocale(locale)) {
+      if (!isValidLocale(locale) && LocaleSetup.LOCALE_ROUTING_ENABLED) {
         updateLocaleURL(defaultLocale, locale);
       }
     }

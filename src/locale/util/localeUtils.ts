@@ -30,7 +30,7 @@ export function isValidLocale(locale: string): boolean {
  * @param locale The locale that you want to add to the path
  */
 export function localizePath(path: string, locale: string) {
-  return path.replace(`:${Param.LOCALE}`, locale);
+  return path.replace(`:${Param.LOCALE}`, locale || '');
 }
 
 /**
@@ -38,7 +38,7 @@ export function localizePath(path: string, locale: string) {
  * @param path
  * @param prefix
  */
-export function prefixPath(path: string, prefix: string) {
+export function prefixPath(path: string, prefix: string = `:${Param.LOCALE}`) {
   return `/${prefix}/${trim(path, '/')}`;
 }
 
@@ -52,7 +52,7 @@ export function localizeRoutes(routes: Array<IRoute>) {
     if (route.localize !== false) {
       return {
         ...route,
-        path: prefixPath(route.path, `:${Param.LOCALE}`),
+        path: prefixPath(route.path),
       };
     }
 

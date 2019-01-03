@@ -1,6 +1,6 @@
 import Home from '../page/Home';
 import Translations from '../page/Translations';
-import { localizeRoutes } from '../locale/util/localeUtils';
+import { localizeRoutes, prefixPath } from '../locale/util/localeUtils';
 import IRoute from './interface/IRoute';
 import { VariableNames } from '../data/enum/configNames';
 import configManager from '../config/configManager';
@@ -53,4 +53,9 @@ const localeRoutingEnabled =
   configManager.getVariable(VariableNames.LOCALE_ENABLED) &&
   configManager.getVariable(VariableNames.LOCALE_ROUTING_ENABLED);
 
+/**
+ * This route is used as a redirect when the current route is not found.
+ */
+export const notFoundPath = localeRoutingEnabled ? prefixPath('/') : '/';
+console.log(notFoundPath);
 export default (localeRoutingEnabled ? localizeRoutes(routes) : routes);
