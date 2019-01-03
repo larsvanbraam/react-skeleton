@@ -2,7 +2,7 @@ import * as styles from './header.scss';
 import * as React from 'react';
 
 import Wrapper from '../../general/Wrapper';
-import routes from '../../../router/routes';
+import routes, { RouteName } from '../../../router/routes';
 import Logo from '../../../asset/svg/logo.svg';
 import LocaleSelector from '../../general/LocaleSelector';
 import { VariableNames } from '../../../data/enum/configNames';
@@ -13,7 +13,7 @@ const Header = () => (
   <header className={styles.header}>
     <Wrapper>
       <div>
-        <LocalizedNavLink exact to="/">
+        <LocalizedNavLink exact to={RouteName.HOME}>
           <Logo className={styles.icon} />️<strong>React Skeleton</strong>
         </LocalizedNavLink>
         {configManager.getVariable(VariableNames.LOCALE_ENABLED) ? <LocaleSelector /> : null}

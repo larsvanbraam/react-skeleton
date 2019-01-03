@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { localizePath } from '../../util/localeUtils';
+import getRoute from '../../../router/util/getRoute';
 
 /**
  * This component proxies the react router Link so you don't have to add
@@ -15,7 +15,7 @@ import { localizePath } from '../../util/localeUtils';
  */
 const LocalizedLink = ({ activeLocale, to, children, ...props }) => {
   return (
-    <Link to={localizePath(to, activeLocale)} {...props}>
+    <Link to={getRoute(to, activeLocale)} {...props}>
       {children}
     </Link>
   );

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import { localizePath } from '../../util/localeUtils';
+import getRoute from '../../../router/util/getRoute';
 
 /**
  * This component proxies the react router NavLink so you don't have to add
@@ -15,7 +15,7 @@ import { localizePath } from '../../util/localeUtils';
  */
 const LocalizedNavLink = ({ activeLocale, to, children, dispatch, ...props }) => {
   return (
-    <NavLink to={localizePath(to, activeLocale)} {...props}>
+    <NavLink to={getRoute(to, activeLocale)} {...props}>
       {children}
     </NavLink>
   );

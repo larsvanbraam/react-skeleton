@@ -29,7 +29,7 @@
  * @param replacements An object containing the selector and the value for the replacement
  * @returns The source string but with the replaced values
  */
-export default function(src: string, replacements: { [key: string]: number }): string {
+export default function(src: string, replacements: { [key: string]: any }): string {
   return Object.keys(replacements).reduce(
     (text, key) => text.replace(new RegExp(`{${key}}`, 'gi'), replacements[key].toString()),
     src,
