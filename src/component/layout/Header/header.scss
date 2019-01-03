@@ -28,6 +28,9 @@
 
   nav {
     a {
+      text-transform: capitalize;
+      display: inline-block;
+
       &:not(:last-child) {
         margin-right: $gridSize * 2;
       }
