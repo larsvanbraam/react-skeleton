@@ -46,6 +46,7 @@ const routes: Array<IRoute> = [
     name: RouteName.TRANSLATIONS,
     path: '/translations',
     component: Translations,
+    exact: true,
   },
 ];
 
@@ -57,5 +58,4 @@ const localeRoutingEnabled =
  * This route is used as a redirect when the current route is not found.
  */
 export const notFoundPath = localeRoutingEnabled ? prefixPath('/') : '/';
-console.log(notFoundPath);
 export default (localeRoutingEnabled ? localizeRoutes(routes) : routes);
