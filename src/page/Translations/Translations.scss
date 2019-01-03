@@ -4,7 +4,8 @@
   }
 
   input,
-  pre {
+  pre,
+  select {
     margin: 0 0 $gridSize * 2;
     font-size: 1.4rem;
   }
@@ -20,7 +21,8 @@
     padding: $gridSize * 2;
     margin-bottom: $gridSize * 2;
 
-    input {
+    input,
+    select {
       @include size(100%, auto);
       padding: $gridSize;
     }

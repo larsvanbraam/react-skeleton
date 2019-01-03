@@ -31,7 +31,7 @@
         "custom": {
           "heading": "CustomFormatter",
           "description":
-          "Apply any custom function as a formatter to modify the string, in this example we add lodash/toUpper",
+          "Apply any custom function as a formatter to modify the string, in this example we add some Lodash methods.",
           "text": "The quick brown fox jumps over the lazy dog"
         }
       }

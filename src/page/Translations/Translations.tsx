@@ -2,6 +2,8 @@ import * as styles from './translations.scss';
 
 import * as React from 'react';
 import toUpper from 'lodash/toUpper';
+import snakeCase from 'lodash/snakeCase';
+import truncate from 'lodash/truncate';
 
 import Wrapper from '../../component/general/Wrapper';
 import LocalizedText from '../../locale/component/LocalizedText';
@@ -14,7 +16,27 @@ class Translations extends React.Component {
   state = {
     replaceValue: 'fox',
     dogCount: 1,
+    activeCustomFormatter: 0,
   };
+
+  private static customFormatters = [
+    {
+      label: 'lodash/toUpper',
+      formatter: toUpper,
+    },
+    {
+      label: 'lodash/snakeCase',
+      formatter: snakeCase,
+    },
+    {
+      label: 'lodash/truncate',
+      formatter: truncate,
+      options: {
+        length: 25,
+        separator: '...',
+      },
+    },
+  ];
 
   /**
    * @private
@@ -30,6 +52,13 @@ class Translations extends React.Component {
    */
   private handleCountChange(event: React.FormEvent<HTMLInputElement>): void {
     this.setState({ ...this.state, ...{ dogCount: parseInt(event.currentTarget.value, 10) } });
+  }
+
+  private handleCustomFormatterChange(event: React.FormEvent<HTMLSelectElement>): void {
+    this.setState({
+      ...this.state,
+      ...{ activeCustomFormatter: parseInt(event.currentTarget.value, 10) },
+    });
   }
 
   public render() {
@@ -175,13 +204,29 @@ class Translations extends React.Component {
                 </pre>
               </div>
               <div>
+                <h4 className="heading-03">Input</h4>
+                <select
+                  name="customFormatter"
+                  onChange={this.handleCustomFormatterChange.bind(this)}
+                >
+                  {Translations.customFormatters.map((formatter, index) => (
+                    <option value={index} key={formatter.label}>
+                      {formatter.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
                 <h4 className="heading-03">Result</h4>
                 <pre>
                   <LocalizedText
                     id="translations.formatters.example.custom.text"
                     formatters={[
                       {
-                        formatter: toUpper,
+                        formatter:
+                          Translations.customFormatters[this.state.activeCustomFormatter].formatter,
+                        args:
+                          Translations.customFormatters[this.state.activeCustomFormatter].options,
                       },
                     ]}
                   />
