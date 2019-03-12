@@ -103,12 +103,13 @@ async function replaceInFiles() {
 
   await replaceInFile({
     files: routesFile,
-    from: '\n' +
-      '  {\n' +
-      '    name: RouteName.TRANSLATIONS,\n' +
-      '    path: \'/translations\',\n' +
-      '    component: Translations,\n' +
-      '  },',
+    from: `
+  {
+    name: RouteName.TRANSLATIONS,
+    path: '/translations',
+    component: Translations,
+    exact: true,
+  },`,
     to: ''
   });
 
